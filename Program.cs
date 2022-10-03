@@ -66,42 +66,7 @@ namespace Assignmnet1
                     return classMembers[index];
                 }
                     return new ClassMember();
-        }
-        static ClassMember FindOldestOneBornInHanoi(List<ClassMember> classMembers){
-                if(classMembers.Count() >0){
-                    int index = -1;
-                    int i =0;
-                    int j =classMembers.Count() -1;
-                    while(true){
-                        bool validPair = true;
-                        if(!classMembers[i].birthPlace.ToLower().Contains("ha noi")){
-                            i++;
-                            validPair = false;
-                        }
-                        else {if(index == -1) index = i;}
-                        if(!classMembers[j].birthPlace.ToLower().Contains("ha noi")){
-                            j--;
-                            validPair = false;
-                        }
-                        else {if(index == -1) index = j;}
-                        if(validPair){
-                            if(DateTime.Compare(classMembers[i].dateOfBirth,classMembers[j].dateOfBirth) > 0 ){
-                                index = j;
-                                i++;
-                            }   
-                            else{
-                                index = i;
-                                j--;
-                            }   
-                        }
-                        if(i>j)
-                            break;
-                    }
-                    if(index != -1)
-                    return classMembers[index];
-                }
-                    return new ClassMember();
-        }
+        } 
         static ClassMember FindFirstOneBornInHanoi(List<ClassMember> classMembers)
         {
             if (classMembers.Count() > 0)
@@ -125,14 +90,7 @@ namespace Assignmnet1
 
             var firstOneBornInHanoi = new ClassMember();
             var oldestOne = new ClassMember();
-
-            // classMembers.Add(new classMember("truong", "trinh", enumGender.MALE,new DateTime(2000,3,23), "0969696969", "Ha Loi Vietnam", true));
-            // classMembers.Add(new classMember("alonso", "fonso", enumGender.FEMALE,new DateTime(2000,8,3), "0969698969", "Ha Noi Viet nam", true));
-            // classMembers.Add(new classMember("chau bac", "ho", enumGender.MALE,new DateTime(1999,5,13), "0969697969", "Quang Dong Trung Quoc", true));
-            // classMembers.Add(new classMember("ALO ALO", "1234", enumGender.FEMALE,new DateTime(1999,5,13), "0962327969", "Quang Dong Trung Hoa", true));
-            // classMembers.Add(new classMember("ALO 1234", "1234", enumGender.FEMALE,new DateTime(2001,5,13), "093422327969", "Ha Noi dong Hoa", true));
-            // classMembers.Add(new classMember("alonso", "fonso2", enumGender.MALE,new DateTime(1998,8,3), "0969698969", "Ha Noi Vim", true));
-
+ 
             classMembers.Add(new ClassMember("truong", "trinh", enumGender.MALE,new DateTime(2000,3,23), "0969696969", "Ha Loi Vietnam", true));
             classMembers.Add(new ClassMember("alonso", "fonso", enumGender.FEMALE,new DateTime(2000,8,3), "0969698969", "Ha 1oi Viet nam", true));
             classMembers.Add(new ClassMember("chau bac", "ho", enumGender.MALE,new DateTime(1999,5,13), "0969697969", "Quang Dong Trung Quoc", true));
@@ -146,6 +104,7 @@ namespace Assignmnet1
             {
             Console.WriteLine("Enter a key: 1 2 3 4 5. Press X to end:");
             var key = Console.ReadLine();
+            if(key!=null)
             switch(key.ToString().Trim()){
                 case("1"):
                 {
@@ -224,9 +183,10 @@ namespace Assignmnet1
                 Console.WriteLine("Invalid input!");
                 break;
                 }
-
-
-            }}
+            }
+            else 
+            Console.WriteLine("Invalid input!");
+            }
 
 
             // int i = 0;
