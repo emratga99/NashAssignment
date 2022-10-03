@@ -72,10 +72,12 @@ namespace Assignmnet1
                             i++;
                             validPair = false;
                         }
+                        else {if(index == -1) index = i;}
                         if(!classMembers[j].birthPlace.ToLower().Contains("ha noi")){
                             j--;
                             validPair = false;
                         }
+                        else {if(index == -1) index = j;}
                         if(validPair){
                             if(DateTime.Compare(classMembers[i].dateOfBirth,classMembers[j].dateOfBirth) > 0 ){
                                 index = j;
@@ -86,7 +88,7 @@ namespace Assignmnet1
                                 j--;
                             }   
                         }
-                        if(i==j)
+                        if(i>=j)
                             break;
                     }
                     if(index != -1)
@@ -108,13 +110,19 @@ namespace Assignmnet1
             var firstOneBornInHanoi = new classMember();
             var oldestOne = new classMember();
 
+            // classMembers.Add(new classMember("truong", "trinh", enumGender.MALE,new DateTime(2000,3,23), "0969696969", "Ha Loi Vietnam", true));
+            // classMembers.Add(new classMember("alonso", "fonso", enumGender.FEMALE,new DateTime(2000,8,3), "0969698969", "Ha Noi Viet nam", true));
+            // classMembers.Add(new classMember("chau bac", "ho", enumGender.MALE,new DateTime(1999,5,13), "0969697969", "Quang Dong Trung Quoc", true));
+            // classMembers.Add(new classMember("ALO ALO", "1234", enumGender.FEMALE,new DateTime(1999,5,13), "0962327969", "Quang Dong Trung Hoa", true));
+            // classMembers.Add(new classMember("ALO 1234", "1234", enumGender.FEMALE,new DateTime(2001,5,13), "093422327969", "Ha Noi dong Hoa", true));
+            // classMembers.Add(new classMember("alonso", "fonso2", enumGender.MALE,new DateTime(1998,8,3), "0969698969", "Ha Noi Vim", true));
+
             classMembers.Add(new classMember("truong", "trinh", enumGender.MALE,new DateTime(2000,3,23), "0969696969", "Ha Loi Vietnam", true));
-            classMembers.Add(new classMember("alonso", "fonso", enumGender.FEMALE,new DateTime(2000,8,3), "0969698969", "Ha Noi Viet nam", true));
+            classMembers.Add(new classMember("alonso", "fonso", enumGender.FEMALE,new DateTime(2000,8,3), "0969698969", "Ha 1oi Viet nam", true));
             classMembers.Add(new classMember("chau bac", "ho", enumGender.MALE,new DateTime(1999,5,13), "0969697969", "Quang Dong Trung Quoc", true));
             classMembers.Add(new classMember("ALO ALO", "1234", enumGender.FEMALE,new DateTime(1999,5,13), "0962327969", "Quang Dong Trung Hoa", true));
-            classMembers.Add(new classMember("ALO 1234", "1234", enumGender.FEMALE,new DateTime(2001,5,13), "093422327969", "Ha Noi dong Hoa", true));
-            classMembers.Add(new classMember("alonso", "fonso2", enumGender.MALE,new DateTime(1998,8,3), "0969698969", "Ha Noi Vim", true));
-
+            classMembers.Add(new classMember("ALO 1234", "1234", enumGender.FEMALE,new DateTime(2001,5,13), "093422327969", "Ha 1oi dong Hoa", true));
+            classMembers.Add(new classMember("alonso", "fonso2", enumGender.MALE,new DateTime(1998,8,3), "0969698969", "H1a Noi Vim", true));
             // first task
             getAllMale = getAllMaleMembers(classMembers);
             
