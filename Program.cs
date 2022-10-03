@@ -88,7 +88,7 @@ namespace Assignmnet1
                                 j--;
                             }   
                         }
-                        if(i>=j)
+                        if(i>j)
                             break;
                     }
                     if(index != -1)
